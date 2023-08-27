@@ -39,7 +39,7 @@ def select_items_with_embeddings(item_ids: List[int],
         # if only allows unselected items
         # from relevance deduct the part that correponds to
         # the interest already captured by items preselected in the list.
-        marginal_relevance[i] = mmr_penalty_wt * np.dot(
+        marginal_relevance[i] += mmr_penalty_wt * np.dot(
             del_user, item_embeddings[i])
     user_embedding = user_embedding_next
 
